@@ -30,11 +30,11 @@ By Ricardo Filipo
 
 ### **Visual design mockups and platform structure.**
 
-### **Dashboard![][image1]**
+### **Dashboard**![dashboard](https://github.com/kobkob/DragonHerd/blob/1.0/doc/dashboard.png)
+### **Task Page**![task](https://github.com/kobkob/DragonHerd/blob/1.0/doc/task.png)
 
-### **Task Page![][image2]**
-
-### **Metrics![][image3]**
+### **Metrics** 
+TODO
 
 ---
 
