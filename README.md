@@ -36,6 +36,25 @@ By Ricardo Filipo
 ### **Metrics** 
 TODO
 
+### Directory Structure
+```
+/dragonherd
+│
+├── dragonherd.php
+├── /assets
+│   ├── /css
+│   ├── /img
+│   │   └── dragonfly.png
+│   └── /js
+├── /includes
+│   ├── class-dragonherd-manager.php
+│   └── admin-page.php
+├── /logs
+│   ├── messages.txt
+│   └── summary.txt
+└── /vendor 
+```
+
 ---
 
 ## **Estimates**
