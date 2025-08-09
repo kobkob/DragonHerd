@@ -4,6 +4,8 @@ WP plugin companion of BugHerd
 Version 1.0  July 19, 2025  
 By Ricardo Filipo
 
+![DragonFly](dragonherd/assets/img/dragonfly_200.png "DargonFly")
+
 ## **Initial considerations**
 
 * Companion plugin to BugHerd  
