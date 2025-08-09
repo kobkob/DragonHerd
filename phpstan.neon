@@ -1,0 +1,19 @@
+parameters:
+    level: 8
+    paths:
+        - dragonherd
+    excludePaths:
+        - vendor
+        - node_modules
+        - coverage
+        - build
+    ignoreErrors:
+        # WordPress functions that PHPStan doesn't recognize
+        - '#Function wp_[a-z_]+ not found\.#'
+        - '#Function add_[a-z_]+ not found\.#'
+        - '#Function plugins_url not found\.#'
+        - '#Function plugin_dir_path not found\.#'
+        -
+            identifier: missingType.iterableValue
+    bootstrapFiles:
+        - tests/bootstrap.php

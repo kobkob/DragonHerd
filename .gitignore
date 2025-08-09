@@ -49,4 +49,28 @@ wp-config.php
 
 # Local files
 backup_local/
-info.md
+
+# Development dependencies
+/vendor/
+/node_modules/
+
+# Testing and coverage
+/coverage/
+/.phpunit.cache/
+
+# Build artifacts
+/build/
+/dist/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Composer lock (optional - uncomment if you want to ignore it)
+# composer.lock

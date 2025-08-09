@@ -1,0 +1,41 @@
+# Development files
+/.git
+/.github
+/tests
+/coverage
+/build
+/backup_local
+/vendor
+/node_modules
+
+# Configuration files
+.gitignore
+.distignore
+phpcs.xml
+phpstan.neon
+phpunit.xml
+composer.json
+composer.lock
+package.json
+package-lock.json
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+# Other development files
+*.log
+.phpunit.cache
+info.md
+*.zip
