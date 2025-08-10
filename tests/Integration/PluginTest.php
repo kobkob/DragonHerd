@@ -12,8 +12,6 @@ use DragonHerd\DragonHerdManager;
 
 /**
  * Integration tests for DragonHerd plugin.
- *
- * @covers \DragonHerd
  */
 class PluginTest extends TestCase {
 

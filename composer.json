@@ -40,7 +40,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "test:coverage": "phpunit --coverage-html coverage",
+        "test:coverage": "phpunit --coverage-html coverage --coverage-clover coverage/clover.xml || test $? -eq 1",
         "phpcs": "phpcs --standard=phpcs.xml",
         "phpcs:fix": "phpcbf --standard=phpcs.xml",
         "phpstan": "phpstan analyse --memory-limit=1G",
