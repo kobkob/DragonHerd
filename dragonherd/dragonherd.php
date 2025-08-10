@@ -4,6 +4,8 @@
  * Description: Fetch tasks from BugHerd and summarize them using OpenAI inside your WordPress admin.
  * Version: 1.0.0
  * Author: Monsenhor Filipo
+ *
+ * @package DragonHerd
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'DRAGONHERD_PATH', plugin_dir_path( __FILE__ ) );
 
 require_once DRAGONHERD_PATH . 'includes/DragonHerdManager.php';
+require_once DRAGONHERD_PATH . 'includes/admin-page.php';
 
 add_action(
 	'admin_menu',
@@ -29,12 +32,19 @@ add_action(
 	}
 );
 
+/**
+ * Display the DragonHerd admin page.
+ *
+ * @return void
+ */
 function dragonherd_admin_page(): void {
-	echo '<div class="wrap"><h1><img src="' . plugins_url( 'assets/img/dragonfly.png', __FILE__ ) . '" style="width:50px; vertical-align:middle; margin-right:2px;"> DragonHerd – AI Summarizer</h1>';
+	echo '<div class="wrap"><h1><img src="' . esc_url( plugins_url( 'assets/img/dragonfly.png', __FILE__ ) ) . '" style="width:50px; vertical-align:middle; margin-right:2px;"> DragonHerd – AI Summarizer</h1>';
 
-	echo '<form method="post"><input type="submit" name="dragonherd_run" class="button button-primary" value="Run Task Summary"></form>';
+	echo '<form method="post">';
+	wp_nonce_field( 'dragonherd_run_action', 'dragonherd_nonce' );
+	echo '<input type="submit" name="dragonherd_run" class="button button-primary" value="Run Task Summary"></form>';
 
-	if ( isset( $_POST['dragonherd_run'] ) ) {
+	if ( isset( $_POST['dragonherd_run'] ) && wp_verify_nonce( $_POST['dragonherd_nonce'], 'dragonherd_run_action' ) ) {
 		$dragon = new \DragonHerd\DragonHerdManager();
 		$dragon->run();
 		echo '<p><strong>Summary completed and saved.</strong></p>';
@@ -43,7 +53,11 @@ function dragonherd_admin_page(): void {
 	echo '</div>';
 }
 
-
+/**
+ * Add DragonHerd dashboard widget.
+ *
+ * @return void
+ */
 function dragonherd_add_dashboard_widget(): void {
 	wp_add_dashboard_widget(
 		'dragonherd_dashboard_widget',

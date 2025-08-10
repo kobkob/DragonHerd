@@ -13,6 +13,8 @@ parameters:
         - '#Function add_[a-z_]+ not found\.#'
         - '#Function plugins_url not found\.#'
         - '#Function plugin_dir_path not found\.#'
+        - '#Function esc_[a-z_]+ not found\.#'
+        - '#Function sanitize_[a-z_]+ not found\.#'
         -
             identifier: missingType.iterableValue
     bootstrapFiles:

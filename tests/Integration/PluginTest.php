@@ -1,4 +1,9 @@
 <?php
+/**
+ * Integration tests for DragonHerd plugin.
+ *
+ * @package DragonHerd
+ */
 
 namespace DragonHerd\Tests\Integration;
 
@@ -42,7 +47,7 @@ class PluginTest extends TestCase {
 	public function it_loads_required_classes(): void {
 		$this->assertFileExists( DRAGONHERD_PATH . 'includes/DragonHerdManager.php' );
 
-		// Should be able to require without errors
+		// Should be able to require without errors.
 		require_once DRAGONHERD_PATH . 'includes/DragonHerdManager.php';
 
 		$this->assertTrue( class_exists( 'DragonHerd\\DragonHerdManager' ) );
@@ -54,7 +59,7 @@ class PluginTest extends TestCase {
 	 * @test
 	 */
 	public function it_handles_activation_and_deactivation(): void {
-		// This is a placeholder test for future activation/deactivation hooks
+		// This is a placeholder test for future activation/deactivation hooks.
 		$this->assertTrue( true, 'Activation/deactivation hooks not yet implemented' );
 	}
 }
