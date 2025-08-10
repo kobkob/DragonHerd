@@ -65,11 +65,11 @@ function dragonherd_render_dashboard_widget(): void {
 	echo '<p><input type="submit" name="dragonherd_widget_submit" class="button button-primary" value="Run Filter &amp; Summarize"></p>';
 	echo '</form>';
 
-	if ( isset( $_POST['dragonherd_widget_submit'] ) && wp_verify_nonce( $_POST['dragonherd_widget_nonce'], 'dragonherd_widget_action' ) ) {
-		$project_id = sanitize_text_field( $_POST['dragonherd_project_id'] ?? '' );
+	if ( isset( $_POST['dragonherd_widget_submit'] ) && isset( $_POST['dragonherd_widget_nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['dragonherd_widget_nonce'] ), 'dragonherd_widget_action' ) ) {
+		$project_id = sanitize_text_field( wp_unslash( $_POST['dragonherd_project_id'] ?? '' ) );
 		$user_id    = intval( $_POST['dragonherd_user_id'] ?? 0 );
-		$status     = sanitize_text_field( $_POST['dragonherd_status'] ?? '' );
-		$keyword    = sanitize_text_field( $_POST['dragonherd_keyword'] ?? '' );
+		$status     = sanitize_text_field( wp_unslash( $_POST['dragonherd_status'] ?? '' ) );
+		$keyword    = sanitize_text_field( wp_unslash( $_POST['dragonherd_keyword'] ?? '' ) );
 
 		$dragon  = new \DragonHerd\DragonHerdManager();
 		$summary = $dragon->runFiltered( $project_id, $status, $user_id, $keyword );
@@ -80,4 +80,3 @@ function dragonherd_render_dashboard_widget(): void {
 		echo '</div>';
 	}
 }
-

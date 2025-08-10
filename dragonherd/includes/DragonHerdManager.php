@@ -92,7 +92,7 @@ class DragonHerdManager {
 		$summary = $this->sendMessageToOpenAI( $message );
 
 		if ( $summary ) {
-			// In a real implementation, this would save to WordPress options/database
+			// In a real implementation, this would save to WordPress options/database.
 			error_log( 'DragonHerd Summary: ' . $summary );
 		}
 	}
@@ -103,7 +103,7 @@ class DragonHerdManager {
 	 * @return array
 	 */
 	private function getAllTasks(): array {
-		// In a real implementation, this would get from WordPress options
+		// In a real implementation, this would get from WordPress options.
 		$defaultProjectId = 'default-project-id';
 		return $this->getAllTasksByProject( $defaultProjectId );
 	}
@@ -163,7 +163,7 @@ class DragonHerdManager {
 	 */
 	private function sendMessageToOpenAI( string $message ): ?string {
 		if ( $this->openAiApiKey === 'YOUR_OPENAI_API_KEY' ) {
-			// Return mock response for development/testing
+			// Return mock response for development/testing.
 			return 'Mock AI Summary: Tasks are progressing well. Main focus areas include bug fixes and feature development.';
 		}
 
@@ -237,7 +237,7 @@ class DragonHerdManager {
 	 */
 	private function getAllTasksByProject( $projectId ): array {
 		if ( $this->bugherdApiKey === 'YOUR_BUGHERD_API_KEY' ) {
-			// Return mock data for development/testing
+			// Return mock data for development/testing.
 			return array(
 				array(
 					'id'           => 1,

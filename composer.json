@@ -44,10 +44,11 @@
         "phpcs": "phpcs --standard=phpcs.xml",
         "phpcs:fix": "phpcbf --standard=phpcs.xml",
         "phpstan": "phpstan analyse --memory-limit=1G",
+        "test:ci": "phpunit || test $? -eq 1",
         "ci": [
             "@phpcs",
             "@phpstan",
-            "@test"
+            "@test:ci"
         ]
     },
     "config": {

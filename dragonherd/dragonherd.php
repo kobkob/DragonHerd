@@ -44,7 +44,7 @@ function dragonherd_admin_page(): void {
 	wp_nonce_field( 'dragonherd_run_action', 'dragonherd_nonce' );
 	echo '<input type="submit" name="dragonherd_run" class="button button-primary" value="Run Task Summary"></form>';
 
-	if ( isset( $_POST['dragonherd_run'] ) && wp_verify_nonce( $_POST['dragonherd_nonce'], 'dragonherd_run_action' ) ) {
+	if ( isset( $_POST['dragonherd_run'] ) && isset( $_POST['dragonherd_nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['dragonherd_nonce'] ), 'dragonherd_run_action' ) ) {
 		$dragon = new \DragonHerd\DragonHerdManager();
 		$dragon->run();
 		echo '<p><strong>Summary completed and saved.</strong></p>';
