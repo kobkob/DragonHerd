@@ -1,0 +1,27 @@
+# Codecov configuration
+# https://docs.codecov.io/docs/codecov-yaml
+
+coverage:
+  status:
+    project:
+      default:
+        # Basic settings
+        target: auto
+        threshold: 1%
+        base: auto
+    patch:
+      default:
+        target: auto
+        threshold: 1%
+        
+  ignore:
+    - "tests/**/*"
+    - "vendor/**/*"
+    - "dragonherd/assets/**/*"
+    - "*.js"
+    - "*.css"
+
+comment:
+  layout: "reach,diff,flags,tree"
+  behavior: default
+  require_changes: false
