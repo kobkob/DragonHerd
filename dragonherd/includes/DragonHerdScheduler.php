@@ -136,8 +136,15 @@ class DragonHerdScheduler {
 		$summary = $manager->runFiltered( $project_id );
 
 		// Store the summary.
-		$sync_results                = get_option( 'dragonherd_sync_results', array() );
-		$sync_results[ $project_id ] = array(
+		$sync_results = get_option( 'dragonherd_sync_results', array() );
+
+		// Initialize project results array if not exists.
+		if ( ! isset( $sync_results[ $project_id ] ) ) {
+			$sync_results[ $project_id ] = array();
+		}
+
+		// Add new sync result.
+		$sync_results[ $project_id ][] = array(
 			'summary'   => $summary,
 			'timestamp' => current_time( 'mysql' ),
 		);

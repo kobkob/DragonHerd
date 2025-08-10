@@ -11,6 +11,7 @@ parameters:
         # WordPress functions that PHPStan doesn't recognize
         - '#Function wp_[a-z_]+ not found\.#'
         - '#Function add_[a-z_]+ not found\.#'
+        - '#Function plugins_url not found\.#'
         - '#Function plugin_dir_path not found\.#'
         - '#Function esc_[a-z_]+ not found\.#'
         - '#Function sanitize_[a-z_]+ not found\.#'
@@ -26,10 +27,13 @@ parameters:
         - '#Function submit_button not found\.#'
         - '#Function selected not found\.#'
         - '#Function checked not found\.#'
+        - '#Function absint not found\.#'
         # WordPress constants
         - '#Constant MINUTE_IN_SECONDS not found\.#'
-        # Ignore PHPDoc type comparisons in legacy code
+        - '#Constant ABSPATH not found\.#'
+        # Development comparison warnings in mock data
         - '#Comparison operation .* is always false\.#'
+        - '#Comparison operation .* is always true\.#'
         -
             identifier: missingType.iterableValue
     bootstrapFiles:
