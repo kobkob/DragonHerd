@@ -116,9 +116,6 @@ TODO
 •  Webhook Support - Real-time updates from BugHerd
 
 ⚙️ Configuration Features:
-•  Settings Page Enhancement - Better UI for API keys and configuration
-•  Project Management - Multiple project support with switching
-•  Scheduling - Automated task sync on schedules (hourly, daily, etc.)
 •  Export/Import - Backup and restore plugin settings
 
 📊 Reporting Features:

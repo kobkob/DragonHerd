@@ -34,6 +34,8 @@ class PluginTest extends TestCase {
 	public function it_has_required_plugin_files(): void {
 		$this->assertFileExists( DRAGONHERD_PATH . 'dragonherd.php' );
 		$this->assertFileExists( DRAGONHERD_PATH . 'includes/DragonHerdManager.php' );
+		$this->assertFileExists( DRAGONHERD_PATH . 'includes/DragonHerdSettings.php' );
+		$this->assertFileExists( DRAGONHERD_PATH . 'includes/DragonHerdScheduler.php' );
 		$this->assertFileExists( DRAGONHERD_PATH . 'includes/admin-page.php' );
 	}
 
@@ -44,11 +46,17 @@ class PluginTest extends TestCase {
 	 */
 	public function it_loads_required_classes(): void {
 		$this->assertFileExists( DRAGONHERD_PATH . 'includes/DragonHerdManager.php' );
+		$this->assertFileExists( DRAGONHERD_PATH . 'includes/DragonHerdSettings.php' );
+		$this->assertFileExists( DRAGONHERD_PATH . 'includes/DragonHerdScheduler.php' );
 
 		// Should be able to require without errors.
 		require_once DRAGONHERD_PATH . 'includes/DragonHerdManager.php';
+		require_once DRAGONHERD_PATH . 'includes/DragonHerdSettings.php';
+		require_once DRAGONHERD_PATH . 'includes/DragonHerdScheduler.php';
 
 		$this->assertTrue( class_exists( 'DragonHerd\\DragonHerdManager' ) );
+		$this->assertTrue( class_exists( 'DragonHerd\\DragonHerdSettings' ) );
+		$this->assertTrue( class_exists( 'DragonHerd\\DragonHerdScheduler' ) );
 	}
 
 	/**

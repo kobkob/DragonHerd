@@ -15,6 +15,25 @@ parameters:
         - '#Function plugin_dir_path not found\.#'
         - '#Function esc_[a-z_]+ not found\.#'
         - '#Function sanitize_[a-z_]+ not found\.#'
+        - '#Function get_option not found\.#'
+        - '#Function update_option not found\.#'
+        - '#Function delete_option not found\.#'
+        - '#Function current_time not found\.#'
+        - '#Function get_bloginfo not found\.#'
+        - '#Function is_email not found\.#'
+        - '#Function current_user_can not found\.#'
+        - '#Function __ not found\.#'
+        - '#Function settings_errors not found\.#'
+        - '#Function submit_button not found\.#'
+        - '#Function selected not found\.#'
+        - '#Function checked not found\.#'
+        - '#Function absint not found\.#'
+        # WordPress constants
+        - '#Constant MINUTE_IN_SECONDS not found\.#'
+        - '#Constant ABSPATH not found\.#'
+        # Development comparison warnings in mock data
+        - '#Comparison operation .* is always false\.#'
+        - '#Comparison operation .* is always true\.#'
         -
             identifier: missingType.iterableValue
     bootstrapFiles:
