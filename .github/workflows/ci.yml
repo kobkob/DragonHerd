@@ -45,7 +45,7 @@ jobs:
       run: composer run phpstan
     
     - name: Run PHPUnit Tests
-      run: composer run test
+      run: composer run test:ci
     
     - name: Generate coverage report
       run: composer run test:coverage

@@ -68,3 +68,7 @@ validate: ci ## Validate code (alias for ci)
 security: ## Run security audit
 	@echo "$(YELLOW)Running security audit...$(RESET)"
 	composer audit
+
+test-all-versions: ## Test with all PHP versions (8.1, 8.2, 8.3)
+	@echo "$(YELLOW)Testing with all PHP versions...$(RESET)"
+	./test-all-versions.sh
