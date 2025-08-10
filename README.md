@@ -95,6 +95,38 @@ TODO
 - Implement each visual widget  
 - Get feedback and improve
 
+### Next Features to implement:
+
+📋 Task Management Features:
+•  Dashboard Widget - Show task summaries on WordPress dashboard
+•  Task Filtering - Advanced filters by status, assignee, project, date range
+•  Bulk Actions - Mark multiple tasks as complete, assign to users, etc.
+•  Task Notifications - Email alerts when tasks are updated
+
+🤖 AI Enhancement Features:
+•  Custom AI Prompts - Let users customize how tasks are summarized
+•  Smart Categorization - AI-powered task categorization and tagging
+•  Priority Detection - Automatically detect and assign task priorities
+•  Sentiment Analysis - Analyze task descriptions for urgency/mood
+
+🔧 Integration Features:
+•  WordPress User Integration - Map BugHerd users to WordPress users
+•  Custom Post Types - Store tasks as WordPress posts for better integration
+•  REST API Endpoints - Expose plugin functionality via WordPress REST API
+•  Webhook Support - Real-time updates from BugHerd
+
+⚙️ Configuration Features:
+•  Settings Page Enhancement - Better UI for API keys and configuration
+•  Project Management - Multiple project support with switching
+•  Scheduling - Automated task sync on schedules (hourly, daily, etc.)
+•  Export/Import - Backup and restore plugin settings
+
+📊 Reporting Features:
+•  Task Analytics - Charts and graphs of task completion rates
+•  Team Performance - Metrics on assignee productivity
+•  Time Tracking - Integration with time tracking for tasks
+•  Reports Export - PDF/CSV reports for management
+
 ---
 
 ### **Colophon**
